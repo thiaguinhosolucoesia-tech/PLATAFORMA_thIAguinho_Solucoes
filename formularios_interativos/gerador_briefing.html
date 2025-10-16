@@ -7,7 +7,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <script src="../..//PLATAFORMA_thIAguinho_Soluco/PLATAFORMA_thIAguinho_Solucoes/firebase-config.js"></script>
+    
+    <script src="../firebase-config.js"></script>
     <style>
         :root {
             --primary-color: #34495e; --accent-color: #1abc9c; --dark-color: #2c3e50;
@@ -104,8 +105,7 @@
 
 <script>
 // =============== CONFIGURAÇÃO DO BRIEFING CUSTOMIZÁVEL ===============
-// Edite este objeto para criar qualquer tipo de formulário de briefing.
-// A interface será construída automaticamente a partir daqui.
+// Nenhuma alteração de lógica necessária aqui.
 const briefingConfig = {
     modules: [
         { 
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const briefingId = `${Date.now()}-${projectName.replace(/\s+/g, '-')}`;
             try {
-                // CAMINHO ADAPTADO PARA AS REGRAS FORNECIDAS
+                // CAMINHO PARA O BANCO DE DADOS ESTÁ CORRETO
                 await database.ref(`easy_lists/${this.currentUser.uid}/paineis_de_inteligencia/${briefingId}`).set({
                     projectName: projectName,
                     createdAt: new Date().toISOString(),
