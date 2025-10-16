@@ -7,7 +7,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <script src="../..//PLATAFORMA_thIAguinho_Soluco/PLATAFORMA_thIAguinho_Solucoes/firebase-config.js"></script>
+    
+    <script src="../firebase-config.js"></script>
     <style>
         :root {
             --primary-color: #2c3e50; --accent-color: #3498db; --dark-color: #222;
@@ -119,6 +120,7 @@
     </div>
 
     <script>
+        // Configuração dinâmica do formulário. Nenhuma alteração aqui.
         const logbookConfig = {
             layout: "grid",
             sections: [
@@ -206,6 +208,7 @@
                 async loadDayData(dateString) {
                     if (!this.currentUser) return;
                     this.showView('loader');
+                    // O caminho para o banco de dados já está correto, apontando para a nova estrutura.
                     const dataRef = database.ref(`easy_lists/${this.currentUser.uid}/diario_de_bordo/${dateString}`);
                     try {
                         const snapshot = await dataRef.once('value');
